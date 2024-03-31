@@ -1,0 +1,9 @@
+extends layouts/_default.pug
+
+block page
+  section.l-error
+    .container.--sm
+      h2.u-text-3xl.u-fw-700.u-color-black-80 找不到相關頁面！請點擊其他連結瀏覽
+      a.u-flex.u-align-center.u-mt-24.u-color-secondary(href="/")
+        iconify-icon.u-icon.--sm.u-mr-8(icon="mingcute:home-6-fill")
+        span 回首頁

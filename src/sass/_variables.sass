@@ -1,0 +1,57 @@
+$spacing-map: (160: 24vw, 120: 20vw, 100: 18vw, 88: 17vw, 80: 16vw, 72: 15vw, 64: 14vw, 56: 12vw, 48: 10vw, 40: 8vw, 32: 6vw, 24: 4vw, 16: 3vw, 12: 2vw, 8: null, 4: null, 2: null, 0: null, auto: null)
+
+:root
+  // spacing
+  @each $spacing, $vw in $spacing-map
+    @if ($spacing == auto)
+      --spacing-#{$spacing}: auto
+    @else
+      --spacing-#{$spacing}: #{calc($spacing / 10)}rem
+    +media(xs)
+      @if $vw
+        --spacing-#{$spacing}: #{$vw}
+        // --spacing-160: 30vw
+
+  --section-spacing-x: 6vw
+  --section-spacing-y: var(--spacing-160)
+  +media(sm)
+    --section-spacing-x: 3vw
+    
+  --container-width: 152rem
+  --container-width-sm: 136rem
+  --container-width-xs: 102.4rem
+
+  --font-primary: 'Noto Sans TC', sans-serif
+  --font-en: 'Roboto', sans-serif
+
+  --color-primary: #59B75B
+  --color-primary-rgb: 255, 0, 107
+  --color-primary-80: rgba(var(--color-primary-rgb), 0.8)
+  --color-primary-60: rgba(var(--color-primary-rgb), 0.6)
+  --color-primary-20: rgba(var(--color-primary-rgb), 0.2)
+
+  --color-secondary: #005BAC
+
+  --color-success: var(--color-primary)
+  --color-danger: #E2907C
+  --color-danger-rgb: 226, 144, 124
+  --color-danger-20: rgba(var(--color-danger-rgb), 0.2)
+
+  --color-black: #2B2B2B
+  --color-black-rgb: 43, 43, 43
+  --color-black-80: rgba(var(--color-black-rgb), 0.8)
+  --color-black-60: rgba(var(--color-black-rgb), 0.6)
+  --color-black-40: rgba(var(--color-black-rgb), 0.4)
+  --color-black-20: rgba(var(--color-black-rgb), 0.2)
+  --color-black-10: rgba(var(--color-black-rgb), 0.1)
+
+  --color-gray: #343434
+  --color-gray-light: #ECECEC
+
+  --color-white: #fff
+  --color-white-rgb: 255, 255, 255
+  --color-white-80: rgba(var(--color-white-rgb), 0.8)
+  --color-white-60: rgba(var(--color-white-rgb), 0.6)
+  --color-white-40: rgba(var(--color-white-rgb), 0.4)
+
+  --color-transparent: transparent

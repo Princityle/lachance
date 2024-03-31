@@ -1,0 +1,12 @@
+.c-links
+  display: flex
+  align-items: center
+  &.--light &__link:hover
+    color: var(--color-white-60)
+    
+  &__wrap:not(:last-child)
+    margin-right: var(--spacing-8)
+  &__link
+    transition: color 0.3s
+    &:hover
+      color: var(--color-black-60)
